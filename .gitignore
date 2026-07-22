@@ -1,0 +1,5 @@
+# Don't upload venv
+venv/
+
+# Don't upload env used to store credentials
+.env

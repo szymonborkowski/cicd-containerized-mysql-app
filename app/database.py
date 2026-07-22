@@ -12,7 +12,7 @@ import mysql.connector
 config = {
   'user': 'root',
   'password': 'example',
-  'host': '127.0.0.1',
+  'host': '172.18.0.2',
   'database': 'employees',  # what to insert here if db not yet created?
   'raise_on_warnings': True
 }
@@ -21,3 +21,10 @@ cnx = mysql.connector.connect(**config)
 
 cnx.close()
 
+print("Completed successfully")
+
+"""
+Finding docker IP address:
+docker inspect \
+  -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container_id>
+"""
