@@ -3,3 +3,6 @@ venv/
 
 # Don't upload env used to store credentials
 .env
+
+# Docker secrets
+secrets/
