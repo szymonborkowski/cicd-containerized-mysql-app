@@ -7,7 +7,7 @@ services:
     restart: always
     container_name: "mysql-user-database"
     environment:
-      MYSQL_ROOT_PASSWORD: /run/secrets/db_password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_password
       MYSQL_DATABASE: employees
     secrets:
       - db_password
