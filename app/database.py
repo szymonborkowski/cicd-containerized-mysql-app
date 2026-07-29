@@ -7,11 +7,16 @@ This file will be for databse connection logic.
 
 import mysql.connector
 
-# Docker is hosting a MySQL database - create method to connect:
 
+# Until I create a python app container use local txt file for accessing db:
+with open("../secrets/db_password.txt") as password_file:
+  password = password_file.read()
+
+
+# Docker is hosting a MySQL database - create method to connect:
 config = {
   'user': 'root',
-  'password': 'example',
+  'password': password,
   'host': '172.18.0.2',
   'database': 'employees',  # what to insert here if db not yet created?
   'raise_on_warnings': True
