@@ -7,13 +7,14 @@ services:
     container_name: "mysql-user-database"
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_password
-      MYSQL_DATABASE: employees
+      MYSQL_DATABASE: user_details
     secrets:
       - db_password
     ports:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d  # The entrypoint is a default baked into the MySQL image
 
 secrets:
   db_password:
